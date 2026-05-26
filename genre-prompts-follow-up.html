@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover Prompts by Genre — Free Sample — Cover Prompt Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum-deep: #4A235A;
+    --plum-mid: #6C3483;
+    --plum-light: #884EA0;
+    --plum-pale: #E8DAEF;
+    --plum-whisper: #F5EEF8;
+    --gold: #B8860B;
+    --gold-light: #D4A949;
+    --cream: #FAF6F0;
+    --cream-warm: #F5EFE6;
+    --rose-dusty: #C49AAA;
+    --rose-pale: #F4E1E5;
+    --text-dark: #2C1B33;
+    --text-soft: #3D2845;
+    --text-muted: #8B7A92;
+    --border-soft: #E5D6DA;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.75;
+    font-size: 18px;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HEADER */
+  .article-hero {
+    background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum-mid) 50%, var(--plum-light) 100%);
+    color: var(--cream);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(212,169,73,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(196,154,170,0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .article-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .article-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; letter-spacing: 0.4em;
+    color: var(--gold-light); font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .article-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 500; line-height: 1.1;
+    margin: 0 0 1.5rem; letter-spacing: -0.005em;
+  }
+  .article-hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-style: italic;
+    color: var(--rose-pale);
+    margin: 0; max-width: 580px; margin: 0 auto;
+  }
+
+  /* BACK LINK */
+  .back-link-bar {
+    background: var(--plum-whisper);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--plum-deep); font-size: 0.78rem;
+    text-decoration: none; font-weight: 600;
+  }
+  .back-link:hover { color: var(--plum-light); }
+
+  /* ARTICLE BODY */
+  article { padding: 3.5rem 0 4rem; }
+
+  article h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--plum-deep);
+    font-weight: 500; line-height: 1.15;
+    margin: 2.5rem 0 1rem;
+  }
+  article h1:first-child { margin-top: 0; }
+  article h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--plum-deep);
+    font-weight: 500; line-height: 1.2;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-soft);
+  }
+  article h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+  article h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; color: var(--plum-mid);
+    font-weight: 600; line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+  }
+  article h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; color: var(--plum-mid);
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  article p {
+    margin: 0 0 1.25rem;
+    color: var(--text-dark);
+  }
+  article p strong { color: var(--plum-deep); font-weight: 600; }
+  article em { color: var(--text-soft); }
+  article a {
+    color: var(--plum-deep);
+    text-decoration: underline;
+    text-decoration-color: var(--gold-light);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  article a:hover {
+    color: var(--plum-light);
+    text-decoration-color: var(--plum-light);
+  }
+
+  article ul, article ol {
+    margin: 0 0 1.5rem;
+    padding-left: 1.5rem;
+  }
+  article li {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  article li::marker { color: var(--gold); }
+
+  article blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    background: var(--plum-whisper);
+    border-left: 3px solid var(--gold-light);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: var(--text-dark);
+  }
+  article blockquote p:last-child { margin-bottom: 0; }
+  article blockquote strong { color: var(--plum-deep); font-style: normal; }
+
+  article code {
+    background: var(--plum-whisper);
+    color: var(--plum-deep);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.92em;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+  }
+  article pre {
+    background: var(--plum-whisper);
+    border-left: 3px solid var(--gold-light);
+    padding: 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  article pre code {
+    background: none; padding: 0; color: inherit; font-size: inherit;
+    font-family: inherit; font-style: inherit;
+  }
+
+  article hr {
+    border: none;
+    border-top: 1px solid var(--border-soft);
+    margin: 2.5rem auto;
+    width: 50%;
+    position: relative;
+  }
+
+  article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  article table th {
+    background: var(--plum-deep);
+    color: var(--cream);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  article table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-soft);
+    vertical-align: top;
+  }
+  article table tr:nth-child(even) td { background: var(--plum-whisper); }
+
+  /* FOOTER */
+  .article-footer {
+    background: var(--plum-deep);
+    color: var(--rose-pale);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .article-footer .footer-flourish {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--gold-light);
+    letter-spacing: 0.5em; margin-bottom: 1rem;
+  }
+  .article-footer p { margin: 0.5rem 0; font-size: 0.95rem; }
+  .article-footer a {
+    color: var(--gold-light); text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .article-footer a:hover { border-bottom-color: var(--gold-light); }
+  .article-footer .footer-meta {
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.75rem; color: var(--rose-dusty);
+  }
+
+  @media (max-width: 700px) {
+    body { font-size: 16px; }
+    .container { padding: 0 1.25rem; }
+    .article-hero { padding: 3rem 1.25rem 2.5rem; }
+    .article-hero h1 { font-size: 2.25rem; }
+    .article-hero p { font-size: 1.1rem; }
+    article h1 { font-size: 2rem; }
+    article h2 { font-size: 1.65rem; }
+    article h3 { font-size: 1.35rem; }
+    article pre { padding: 1.25rem; font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-eyebrow">Substack Article</div>
+    <h1>Cover Prompts by Genre — Free Sample</h1>
+    <p>One strong cover prompt for each of twelve major fiction genres, plus the three principles that make any cover prompt actually work.</p>
+  </div>
+</section>
+
+<div class="back-link-bar">
+  <div class="container">
+    <a class="back-link" href="index.html">← Back to Library</a>
+  </div>
+</div>
+
+<article>
+  <div class="container">
+<p><em>A genre-by-genre cover prompt library for the AI tools that actually deliver — Gemini, Grok, Ideogram, and Midjourney. Free sample below. The full expanded library is for paid subscribers at the bottom of this post.</em></p>
+<hr>
+<p>Last week&#39;s article was about the legal landscape of AI cover art — the Copyright Office&#39;s hybrid-work registration path, the KDP disclosure rule everybody misses, the right-of-publicity issue I will keep yelling about until the heat death of the universe.</p>
+<p>But none of that matters if you cannot actually generate a cover that works.</p>
+<p>So this week, the prompts. The actual words you type into Gemini, Grok, Ideogram, or Midjourney to get a cover that does not look like every other AI cover floating around indie publishing right now.</p>
+<p>I am writing this from the perspective of someone running eleven pen names across romance, dark fantasy, Regency, sports romance, vampire rom-com, mafia, gothic horror, and psychological thriller — plus my husband Gary writing psychological thriller as Garrett Stone. The prompts below are the ones I actually use. They have been refined across hundreds of generations. Where there is a specific gotcha for the genre, I name it.</p>
+<p>Quick housekeeping before we get into them.</p>
+<h2>What makes a cover prompt actually work</h2>
+<p>Three principles, then we go.</p>
+<p><strong>Specificity beats vibes.</strong> &quot;A romance book cover&quot; gives you slop. &quot;An overhead flat-lay of a closed hardcover book in dusty pink and gold, sitting on a marble countertop beside a half-empty espresso cup, soft window light from the upper left, editorial photography&quot; gives you something usable. The AI is not a mind reader. It is a pattern-matcher. The more pattern you give it, the better the match.</p>
+<p><strong>Exclude what you do not want.</strong> Every prompt below ends with explicit exclusions — no text, no faces, no real people, no readable letters. AIs default to adding these things. You have to tell them not to.</p>
+<p><strong>Style descriptor at the end.</strong> &quot;Editorial photography.&quot; &quot;Painterly digital illustration.&quot; &quot;Watercolor flat illustration.&quot; &quot;Cinematic moody portrait.&quot; This is the most underused part of cover prompting. It locks the aesthetic. Add it at the end of every prompt.</p>
+<p>Okay. Here we go.</p>
+<hr>
+<h2>Contemporary Romance (Illustrated / Cartoon Style)</h2>
+<p>This is the dominant cover aesthetic in trade-published romance right now. Emily Henry, Christina Lauren, Tessa Bailey paperbacks. Two stylized figures, bright background, no faces or distant faces, a scene element.</p>
+<blockquote>
+<p><em>A vibrant illustrated book cover composition in modern cartoon romance style. Two stylized figures, faces turned away or in profile silhouette only — a woman in a flowy summer dress in coral pink and a man in a relaxed white linen shirt — standing close together at the edge of a sunny seaside boardwalk. Background: bright turquoise ocean, soft yellow sunlight, a single seagull in flight. Color palette: coral pink, turquoise, butter yellow, cream. Flat illustration with soft gradients and subtle shading, modern romance trade-paperback aesthetic. No text or letters. No detailed facial features.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Trade romance covers in 2026 are running heavy on &quot;faces turned away or silhouetted&quot; — keeps them aspirational, avoids the uncanny-valley AI face problem, and lets readers project. Specify the color palette explicitly or you will get muddy generic output.</p>
+<hr>
+<h2>Steamy Contemporary Romance (Live-Action / Photo Style)</h2>
+<p>The opposite end — readers who want a sexy photo cover with a real-feeling couple. Sage Kennedy and Constance Ruth Clark territory for me.</p>
+<blockquote>
+<p><em>A cinematic moody portrait of a couple in an intimate close-embrace pose, photographed from the side. The woman&#39;s face is partially obscured by the man&#39;s shoulder; the man&#39;s face is turned downward, hidden in shadow — no clear features on either figure. She wears an elegant silk slip dress in deep burgundy; he wears a crisp white button-down with rolled sleeves. Soft amber and warm gold lighting from a window off-frame, creating a chiaroscuro effect. Background: a softly blurred luxurious bedroom in shadow. Color palette: deep burgundy, warm gold, cream, charcoal. Editorial fine-art photography style, shallow depth of field, film grain texture. No text or letters. No identifiable facial features.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> &quot;Faces hidden in shadow or turned away&quot; is critical — it sidesteps the right-of-publicity issue completely and avoids AI&#39;s uncanny-face tells. Specify the wardrobe in real-fabric terms (silk slip, white button-down) — AIs render fabric well.</p>
+<hr>
+<h2>Sports Romance (Hockey, Football, Baseball)</h2>
+<p>Hockey is having a massive moment in romance right now. I am writing it under Sage Kennedy. The cover formula is well-established: athletic figure + sport element + team color palette.</p>
+<blockquote>
+<p><em>An illustrated romance book cover. A stylized male hockey player from the chest down, holding a hockey stick across his body in a relaxed posture — face cropped above the frame, no facial features shown. He wears a navy and silver hockey jersey, slightly worn. Behind him, a soft-focus ice rink with stadium lights creating a warm glow. Bottom of image: a single red rose lying on the ice. Color palette: navy blue, silver, soft gold from rink lights, deep red accent. Modern illustrated romance cover style, painterly digital illustration, soft shading. No text or letters. No identifiable facial features.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Crop the face above frame — it solves the likeness problem and matches current sports romance aesthetics. The &quot;single rose on the ice&quot; is the romance signifier that prevents the cover from reading as straight sports fiction.</p>
+<hr>
+<h2>Romantasy / Dark Fantasy Romance</h2>
+<p>Sarah J. Maas territory, dragon shifter, fae court politics, the whole &quot;throne and crown and a sword&quot; aesthetic. Ruthie Clark for me.</p>
+<blockquote>
+<p><em>A lush atmospheric fantasy book cover. A dark ornate throne carved from black stone, sitting on a raised dais in a vast shadowed hall. Draped across one arm of the throne: a long emerald-green silk gown. Resting against the base of the throne: a silver sword with intricate filigree along the blade, point down. Behind the throne, large arched stained-glass windows with abstract jewel-toned designs in emerald, sapphire, and ruby. Atmospheric backlight streaming through the windows, creating dust-mote beams of golden light. Color palette: deep black, emerald green, antique gold, dusty ruby. Painterly digital fantasy illustration, dramatic chiaroscuro, lush textures. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Object-based composition (throne, dress, sword) instead of figure-based avoids the AI-character-face problem and creates the lush atmospheric mood romantasy readers expect. Specify ornate carved details and stained glass — AI renders these beautifully.</p>
+<hr>
+<h2>Paranormal / Vampire Romance</h2>
+<p>Kelsey Croft for me. The aesthetic is gothic-but-sexy — moody architecture, candles, opulent darkness.</p>
+<blockquote>
+<p><em>A moody gothic romance book cover. A close-up of an ornate antique mirror on a dark stone wall — its glass reflects only swirling mist, no figure visible. Below the mirror, a vintage console table with a single tall taper candle, burning low with a soft warm flame. Beside the candle, a crystal goblet of dark red wine. Color palette: deep midnight blue, antique gold, blood red, shadow black. Dramatic candlelight as primary lighting source, deep shadows throughout the rest of the frame. Painterly cinematic illustration, gothic romance aesthetic, rich textures. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Vampire romance covers in 2026 lean heavily on &quot;atmospheric objects suggesting presence&quot; rather than figures. Mirror with mist instead of reflection is a classic move. Candlelight is the cover designer&#39;s secret weapon for vampire covers — AI renders it gorgeously.</p>
+<hr>
+<h2>Mafia / Dark Romance</h2>
+<p>Moxie Savage territory. High-contrast, dangerous, controlled chaos.</p>
+<blockquote>
+<p><em>A high-contrast dark romance book cover. A man&#39;s hand from the wrist down, wearing a black leather glove, holding a single dark red rose with a thorn drawing a small drop of blood. The hand rests on a smooth black surface. In the corner of the frame, a softly blurred silver pistol lies horizontally. Color palette: pure black, deep blood red, gunmetal silver. Stark dramatic lighting from a single overhead source, creating deep shadows. Cinematic editorial photography style with fine grain texture. No text or letters. No human face visible.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Dark romance covers are object-driven and high-contrast — the hand, the rose, the weapon, the blood. Crop tight on the hand (no face) to avoid likeness issues entirely. Specify &quot;smooth black surface&quot; — AI tends to add unwanted detail otherwise.</p>
+<hr>
+<h2>Historical Regency Romance</h2>
+<p>Marjorie Adams pen name. Soft, romantic, period-accurate, with a sense of restrained tension.</p>
+<blockquote>
+<p><em>An elegant Regency-era romance book cover. A young woman seen from behind, wearing a high-waisted empire silhouette gown in pale blush silk, looking out a tall arched window with leaded glass panes. The window overlooks a sprawling English countryside estate with manicured gardens, rolling green hills, and a hint of an ornamental fountain. Soft golden afternoon light streams through the window, illuminating dust motes in the air. Her hair is loosely pinned up in period style; no facial features visible. Color palette: pale blush pink, soft cream, sage green, antique gold. Painterly oil-painting illustration style, classical romantic aesthetic. No text or letters. No facial features.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> &quot;Seen from behind&quot; is the Regency romance cover formula and it solves the face problem. Specify &quot;empire silhouette&quot; and &quot;leaded glass&quot; so the AI knows this is Regency, not Victorian or Tudor. Garden detail in the background = aspirational. The art style descriptor &quot;painterly oil-painting&quot; is what gets you the period feeling.</p>
+<hr>
+<h2>Clean Western Romance</h2>
+<p>Rosemary Irving pen name. Wholesome, warm, scenic, no spice signals.</p>
+<blockquote>
+<p><em>A warm pastoral Western romance book cover. A weathered brown cowboy hat resting on a wooden fence post in the foreground. Behind it, a sweeping prairie landscape at golden hour — tall grass moving in the wind, a single horse grazing in the middle distance, soft rolling hills under a sky painted in apricot and rose by the setting sun. A pair of well-worn leather riding boots leaning against the base of the fence post. Color palette: warm amber, dusty rose, soft cream, weathered brown, sage. Painterly illustrated Western aesthetic, soft and inviting, warm lighting. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Western romance signals are object-based — hat, boots, fence post, horse. Sunset color palette is the entire genre in one move. Specify &quot;painterly illustrated&quot; rather than photorealistic to avoid hyper-realistic AI cowboys with wonky hands.</p>
+<hr>
+<h2>Christian / Inspirational Romance</h2>
+<p>Soft, hopeful, light-filled, faith woven in subtly rather than slammed on top.</p>
+<blockquote>
+<p><em>A soft inspirational romance book cover. An open vintage hardcover book sitting on a weathered white-painted wooden bench, pages gently fluttering as if in a light breeze. Resting on top of the book, a single sprig of white wildflowers. Behind the bench, a sun-dappled meadow with tall grass and scattered wildflowers in soft pastels, leading toward a distant church steeple barely visible against a luminous pale blue sky. Warm golden morning light filtering through the scene, creating a gentle halo effect. Color palette: cream, soft sky blue, butter yellow, pale sage, white. Painterly watercolor illustration aesthetic, gentle and hopeful. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Christian romance covers are about light, hope, and gentle symbolism. The distant church steeple is the faith signal — present but not heavy-handed. Watercolor is the aesthetic that signals &quot;inspirational&quot; without screaming it.</p>
+<hr>
+<h2>Psychological Thriller</h2>
+<p>Garrett Stone territory. Stark, isolating, single haunting image. Less is more.</p>
+<blockquote>
+<p><em>A stark psychological thriller book cover. A single empty wooden chair sitting in the center of a long dimly-lit hallway, viewed from the opposite end of the hall. The walls are pale and faintly textured with peeling paint. A single bare lightbulb hangs from the ceiling above the chair, casting a harsh cold pool of light. The rest of the hallway recedes into shadow. The floor reflects the light in a wet sheen, as if recently mopped. Color palette: cold gray, pale ivory, deep black shadow, sickly yellow lightbulb glow. Cinematic horror-adjacent photography style, high contrast, oppressive atmosphere. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Thriller covers in 2026 are minimalist and atmospheric — Gillian Flynn, Tana French, Lisa Jewell aesthetic. One object, oppressive lighting, asymmetric composition. Specifying the chair position and the wet sheen on the floor gives the AI enough to build dread.</p>
+<hr>
+<h2>Cozy Mystery</h2>
+<p>The friendliest genre in fiction. Pastel, charming, slightly twee, often with a cat.</p>
+<blockquote>
+<p><em>A charming cozy mystery book cover. A vintage teacup and saucer in floral china pattern sitting on a small round bistro table, with a single magnifying glass placed beside it. A black cat with bright green eyes sits on the table, looking directly at the viewer with a knowing expression. Behind the table, a quaint English village street with charming shop fronts in pastel colors, window boxes overflowing with flowers, and a cobblestone road. Color palette: dusty rose, mint green, butter yellow, cream, charcoal cat. Whimsical illustrated cozy mystery aesthetic, hand-painted feel, warm and inviting despite a slight sense of mischief. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Cozy mystery has a strict visual formula — the cat, the cup, the village. Specify &quot;magnifying glass&quot; instead of a more dramatic detective tool. Animals are one of the few &quot;characters&quot; AIs render reliably well.</p>
+<hr>
+<h2>Gothic / Literary Horror</h2>
+<p>Lenore Ashby territory. Dark, atmospheric, beautiful, eerie.</p>
+<blockquote>
+<p><em>An atmospheric gothic horror book cover. An old isolated manor house on a windswept moor, viewed from a slight distance at twilight. The house is partially obscured by a low rolling mist that creeps across the ground. A single window on the upper floor glows with a faint amber light — the only light in the entire scene. The sky behind the house is a bruised indigo gradient with low gray storm clouds. A single bare tree to the left of the house, branches twisted by wind. In the foreground, tall dead grass at the edge of an overgrown path leading toward the house. Color palette: bruised indigo, charcoal gray, faint amber, mossy green. Painterly atmospheric illustration in the style of classical gothic novel cover art, oppressive mood. No text or letters. No human figures.</em></p>
+</blockquote>
+<p><strong>Why this works:</strong> Gothic horror is about anticipation, not gore. The single glowing window is the entire story in one detail. Avoid the AI default of &quot;spooky old house with a million windows&quot; — specify ONE window glowing, isolation, mist.</p>
+<hr>
+<h2>That is the free sample. Twelve genres, twelve prompts.</h2>
+<p>I tried to pick the ones with the broadest applicability. If you write contemporary, romance, mystery, thriller, horror, or fantasy, you have a starting point for your next cover.</p>
+<p>But here is the thing — one prompt per genre is a sample. It is not a library.</p>
+<p>A real cover library needs <strong>mood variations within each genre</strong> (a moody mafia cover is different from a chaotic mafia cover is different from a noir mafia cover), <strong>format variations</strong> (object-based, figure-based, scene-based), and the <strong>prompt engineering tips</strong> that turn a serviceable prompt into one that consistently delivers.</p>
+<p>So that is what is below this line for paid subscribers.</p>
+<hr>
+<h2>🔒 PAID SUBSCRIBERS — Expanded Cover Prompt Library Below</h2>
+<p><em>Everything from here down is paid-subscriber only. If you are reading this and you are not paid yet, hit the upgrade button — it is $9.99/month or $99.99/year, and you get this library plus every paid-only resource I drop going forward. The library has 3 to 5 prompt variations per genre across 12 major genres, the full Cover Prompt Anatomy breakdown, the negative-prompt cheat sheet, and the genre mood-board variations I use across my own eleven pen names.</em></p>
+<p>[Continued in: Paid Subscriber Cover Prompt Library]</p>
+<hr>
+<p><em>As always — this is research and practitioner experience, not legal or design advice. Prompts work differently across tools and tool versions; what I have here is the May 2026 working set. Test, iterate, ship.</em></p>
+<p>— Jess</p>
+
+  </div>
+</article>
+
+<footer class="article-footer">
+  <div class="footer-flourish">·  ·  ·</div>
+  <p><a href="index.html">Cover Prompt Library</a> &nbsp;·&nbsp; <a href="https://theinvisiblepen.substack.com">The Invisible Pen on Substack</a></p>
+  <p>Clark Publishing House LLC · The Invisible Pen</p>
+  <div class="footer-meta">Updated May 2026 · Research and practitioner experience, not legal advice.</div>
+</footer>
+
+</body>
+</html>

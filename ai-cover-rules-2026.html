@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Book Cover Rules 2026 — Cover Prompt Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum-deep: #4A235A;
+    --plum-mid: #6C3483;
+    --plum-light: #884EA0;
+    --plum-pale: #E8DAEF;
+    --plum-whisper: #F5EEF8;
+    --gold: #B8860B;
+    --gold-light: #D4A949;
+    --cream: #FAF6F0;
+    --cream-warm: #F5EFE6;
+    --rose-dusty: #C49AAA;
+    --rose-pale: #F4E1E5;
+    --text-dark: #2C1B33;
+    --text-soft: #3D2845;
+    --text-muted: #8B7A92;
+    --border-soft: #E5D6DA;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.75;
+    font-size: 18px;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HEADER */
+  .article-hero {
+    background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum-mid) 50%, var(--plum-light) 100%);
+    color: var(--cream);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(212,169,73,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(196,154,170,0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .article-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .article-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; letter-spacing: 0.4em;
+    color: var(--gold-light); font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .article-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 500; line-height: 1.1;
+    margin: 0 0 1.5rem; letter-spacing: -0.005em;
+  }
+  .article-hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-style: italic;
+    color: var(--rose-pale);
+    margin: 0; max-width: 580px; margin: 0 auto;
+  }
+
+  /* BACK LINK */
+  .back-link-bar {
+    background: var(--plum-whisper);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--plum-deep); font-size: 0.78rem;
+    text-decoration: none; font-weight: 600;
+  }
+  .back-link:hover { color: var(--plum-light); }
+
+  /* ARTICLE BODY */
+  article { padding: 3.5rem 0 4rem; }
+
+  article h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--plum-deep);
+    font-weight: 500; line-height: 1.15;
+    margin: 2.5rem 0 1rem;
+  }
+  article h1:first-child { margin-top: 0; }
+  article h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--plum-deep);
+    font-weight: 500; line-height: 1.2;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-soft);
+  }
+  article h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+  article h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; color: var(--plum-mid);
+    font-weight: 600; line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+  }
+  article h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; color: var(--plum-mid);
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  article p {
+    margin: 0 0 1.25rem;
+    color: var(--text-dark);
+  }
+  article p strong { color: var(--plum-deep); font-weight: 600; }
+  article em { color: var(--text-soft); }
+  article a {
+    color: var(--plum-deep);
+    text-decoration: underline;
+    text-decoration-color: var(--gold-light);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  article a:hover {
+    color: var(--plum-light);
+    text-decoration-color: var(--plum-light);
+  }
+
+  article ul, article ol {
+    margin: 0 0 1.5rem;
+    padding-left: 1.5rem;
+  }
+  article li {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  article li::marker { color: var(--gold); }
+
+  article blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    background: var(--plum-whisper);
+    border-left: 3px solid var(--gold-light);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: var(--text-dark);
+  }
+  article blockquote p:last-child { margin-bottom: 0; }
+  article blockquote strong { color: var(--plum-deep); font-style: normal; }
+
+  article code {
+    background: var(--plum-whisper);
+    color: var(--plum-deep);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.92em;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+  }
+  article pre {
+    background: var(--plum-whisper);
+    border-left: 3px solid var(--gold-light);
+    padding: 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  article pre code {
+    background: none; padding: 0; color: inherit; font-size: inherit;
+    font-family: inherit; font-style: inherit;
+  }
+
+  article hr {
+    border: none;
+    border-top: 1px solid var(--border-soft);
+    margin: 2.5rem auto;
+    width: 50%;
+    position: relative;
+  }
+
+  article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  article table th {
+    background: var(--plum-deep);
+    color: var(--cream);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  article table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-soft);
+    vertical-align: top;
+  }
+  article table tr:nth-child(even) td { background: var(--plum-whisper); }
+
+  /* FOOTER */
+  .article-footer {
+    background: var(--plum-deep);
+    color: var(--rose-pale);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .article-footer .footer-flourish {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--gold-light);
+    letter-spacing: 0.5em; margin-bottom: 1rem;
+  }
+  .article-footer p { margin: 0.5rem 0; font-size: 0.95rem; }
+  .article-footer a {
+    color: var(--gold-light); text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .article-footer a:hover { border-bottom-color: var(--gold-light); }
+  .article-footer .footer-meta {
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.75rem; color: var(--rose-dusty);
+  }
+
+  @media (max-width: 700px) {
+    body { font-size: 16px; }
+    .container { padding: 0 1.25rem; }
+    .article-hero { padding: 3rem 1.25rem 2.5rem; }
+    .article-hero h1 { font-size: 2.25rem; }
+    .article-hero p { font-size: 1.1rem; }
+    article h1 { font-size: 2rem; }
+    article h2 { font-size: 1.65rem; }
+    article h3 { font-size: 1.35rem; }
+    article pre { padding: 1.25rem; font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-eyebrow">Reference Guide</div>
+    <h1>AI Book Cover Rules 2026</h1>
+    <p>A practitioner-built guide to the legal landscape of AI book cover art — for indie authors who need to publish with confidence.</p>
+  </div>
+</section>
+
+<div class="back-link-bar">
+  <div class="container">
+    <a class="back-link" href="index.html">← Back to Library</a>
+  </div>
+</div>
+
+<article>
+  <div class="container">
+<p><em>Compiled May 12, 2026 — Clark Publishing House / The Invisible Pen</em></p>
+<blockquote>
+<p><strong>Plain-English bottom line:</strong> You can legally make AI book covers with most major tools today. The catch is in three places: <strong>(1) what you can disclose to KDP and other platforms, (2) whether you can actually copyright the cover, and (3) whether the image accidentally infringes on someone else&#39;s IP.</strong> This guide walks through each tool and the rules around them.</p>
+</blockquote>
+<hr>
+<h2>The Three Rules That Apply Everywhere</h2>
+<p>Before any specific tool: these three rules apply across every AI image generator you use.</p>
+<p><strong>1. The platform license is not the same as copyright.</strong>
+Every major AI tool grants you a <em>license</em> to use the image commercially. That is not the same as you <em>owning</em> the copyright. As of the March 2026 Supreme Court denial of cert in <em>Thaler v. Perlmutter</em>, the law in the US is settled: a purely AI-generated image, made from a prompt alone, has <strong>no human authorship</strong> and therefore <strong>cannot be copyrighted</strong>. You can sell it. You just can&#39;t stop someone else from copying it.</p>
+<p><strong>2. The platform license does not protect you from third-party claims.</strong>
+If the AI spits out something that looks like Disney&#39;s Elsa, or like a real celebrity&#39;s face, or like a real artist&#39;s signature style, you are the one who gets sued — not the AI company. Most tools say this explicitly in their TOS. The one big exception is Adobe Firefly (see below).</p>
+<p><strong>3. KDP, IngramSpark, and Draft2Digital each have different disclosure rules.</strong>
+What&#39;s fine on Amazon may flag you on IngramSpark. Know the platform before you upload.</p>
+<hr>
+<h2>Tool-by-Tool Breakdown</h2>
+<h3>Ideogram</h3>
+<p><strong>Commercial use:</strong> Yes, on all tiers — including free.
+<strong>Ownership:</strong> Ideogram explicitly does not claim ownership of your outputs and does not restrict commercial use. Their TOS assigns all rights in the output to you.
+<strong>Strength for covers:</strong> Best-in-class for accurate <strong>text on image</strong> — useful for titles, subtitle text, and series banners that other tools mangle.
+<strong>Watch out for:</strong> You are still responsible for not infringing on third-party IP. The free license is identical to paid in terms of usage rights — paid just gets you more generations and higher resolution.</p>
+<h3>Grok / Aurora (xAI)</h3>
+<p><strong>Commercial use:</strong> Yes, on all tiers — Free, X Premium, and SuperGrok.
+<strong>Ownership:</strong> xAI&#39;s TOS assigns ownership of outputs to the user. No revenue cap.
+<strong>Strength for covers:</strong> Will generate things other tools refuse (including stylized real-person likenesses, which is <strong>a major legal risk, not a feature</strong> — see &quot;Likeness&quot; section below).
+<strong>Watch out for:</strong></p>
+<ul>
+<li><strong>No IP indemnification.</strong> If a copyright claim hits, you&#39;re on your own.</li>
+<li>xAI retains the right to train on your prompts and outputs.</li>
+<li>The more permissive content filter is a double-edged sword. Grok will happily generate a face that looks suspiciously like a known actor. That is your legal problem, not xAI&#39;s.</li>
+</ul>
+<h3>Google Gemini / Imagen</h3>
+<p><strong>Commercial use:</strong> Yes, on all tiers including free, per Google&#39;s terms.
+<strong>Ownership:</strong> Google grants you commercial rights to outputs without royalties.
+<strong>Strength for covers:</strong> Imagen 4 / Nano-Banana is very good at clean composition and photorealistic faces. Cheaper than Midjourney if you already have Google One / Gemini Advanced.
+<strong>Watch out for:</strong></p>
+<ul>
+<li>Same copyrightability problem as everyone else.</li>
+<li>Google&#39;s permission does not override third-party rights. If Gemini renders something that looks like a copyrighted character, you cannot use that.</li>
+<li>Enterprise (Vertex AI) tier has additional protections that consumer Gemini does not.</li>
+</ul>
+<h3>Midjourney</h3>
+<p><strong>Commercial use:</strong> <strong>Paid plans only.</strong> Basic ($10/mo), Standard ($30), Pro ($60), Mega ($120).
+<strong>Ownership:</strong> Paid subscribers get a commercial license to use, sell, and build on outputs.
+<strong>The $1M Rule:</strong> If your business grosses over $1 million USD a year, you must be on Pro or Mega to use the images commercially. (Most indie authors will not hit this.)
+<strong>Strength for covers:</strong> Still considered top-tier for atmospheric, painterly, romance/fantasy aesthetics. Massive style range.
+<strong>Watch out for:</strong></p>
+<ul>
+<li><strong>Active Disney/Universal/DreamWorks lawsuit</strong> (filed June 2025, still in litigation as of May 2026). Allegations include unlicensed training data and outputs that mimic copyrighted characters. No ruling yet, but the case is being watched as the one that may reshape AI cover rules.</li>
+<li>Public mode on lower tiers means your generations are visible to other users — and they can use them too. Use Stealth Mode (Pro/Mega) for client work.</li>
+</ul>
+<h3>DALL-E (via ChatGPT)</h3>
+<p><strong>Commercial use:</strong> Yes. OpenAI&#39;s terms assign all right, title, and interest in DALL-E outputs to the user.
+<strong>Ownership:</strong> You own outputs and may use them for any legal purpose, including selling book covers.
+<strong>Strength for covers:</strong> Easy to iterate on inside ChatGPT, no separate tool. Solid for stylized illustrative covers.
+<strong>Watch out for:</strong></p>
+<ul>
+<li>Content restrictions on real people and &quot;living artist styles.&quot;</li>
+<li>Same copyright-of-AI-output limitation: you own the license, but pure AI output likely isn&#39;t copyrightable.</li>
+</ul>
+<h3>Leonardo AI</h3>
+<p><strong>Commercial use:</strong> <strong>Paid plans only</strong> ($10/mo and up). Free tier outputs cannot be used commercially.
+<strong>Ownership:</strong> Paid subscribers retain full ownership of <em>private</em> generations. Public generations on free tier are not yours to sell.
+<strong>Strength for covers:</strong> Strong style controls, character consistency tools, fine-tuned model picker — useful when you need a series to look like a series.
+<strong>Watch out for:</strong></p>
+<ul>
+<li>Make sure your generations are set to <strong>Private</strong> if you don&#39;t want them used to train models or shown to other users.</li>
+<li>Free tier is for play. Don&#39;t put a free-tier Leonardo image on a published book.</li>
+</ul>
+<h3>Stable Diffusion / SDXL</h3>
+<p><strong>Commercial use:</strong> Yes, with no revenue caps. Falls under the CreativeML Open RAIL++-M License.
+<strong>Ownership:</strong> You own your outputs whether you self-host or use the API.
+<strong>Strength for covers:</strong> Free if you run it locally. Massive ecosystem of fine-tuned models (romance, fantasy, horror, dark academia, etc.) on Civitai and elsewhere.
+<strong>Watch out for:</strong></p>
+<ul>
+<li><strong>Read the model card.</strong> Base SDXL is permissive, but specific fine-tuned models on Civitai have their own licenses — some prohibit commercial use, some require credit, some are CC-non-commercial. The model you download is not automatically the same license as base SDXL.</li>
+<li>The RAIL license has use-based restrictions (no illegal/harmful content) but no royalty.</li>
+<li>Highest technical lift — running SDXL well takes a GPU and some setup.</li>
+</ul>
+<h3>Canva AI (Magic Media)</h3>
+<p><strong>Commercial use:</strong> Yes, on Canva Pro / Teams. Allowed for &quot;any legal purpose, including personal or commercial projects&quot; per Canva&#39;s terms.
+<strong>Ownership:</strong> You own the images you create. Canva does not claim copyright over Magic Media output.
+<strong>Strength for covers:</strong> Integrates with the rest of Canva — fonts, layouts, templates — so you can take an AI image and finish the cover in the same tool. Great for paperback wraparounds and KDP-spec sizing.
+<strong>Watch out for:</strong></p>
+<ul>
+<li>Canva explicitly says you may <strong>not have exclusive rights</strong> to your AI output. Two authors could prompt similar things and get similar covers.</li>
+<li>Canva does not guarantee outputs are cleared for use if the design resembles someone else&#39;s work.</li>
+<li>Same general copyrightability limitation.</li>
+</ul>
+<h3>Adobe Firefly</h3>
+<p><strong>Commercial use:</strong> Yes, on all paid Creative Cloud plans. <strong>The only major tool with built-in IP indemnification.</strong>
+<strong>Ownership:</strong> You may use Firefly outputs for commercial purposes including book covers.
+<strong>The big difference:</strong> Adobe trained Firefly exclusively on <strong>licensed Adobe Stock, openly licensed content, and public domain material.</strong> If someone claims a Firefly output infringes their IP, Adobe will defend you (on qualifying paid plans).
+<strong>Strength for covers:</strong> Lowest legal risk of any tool on this list. Native integration with Photoshop and Express. If you have a Creative Cloud subscription, you may already be paying for it.
+<strong>Watch out for:</strong></p>
+<ul>
+<li>Quality is generally rated below Midjourney/Ideogram/Grok for atmospheric romance and fantasy covers. Improving fast in 2026 but not the top of the pack aesthetically.</li>
+<li>Indemnification applies through Adobe apps and qualifying plans only — <strong>not</strong> through third-party API wrappers.</li>
+</ul>
+<hr>
+<h2>The KDP / Distributor Rules</h2>
+<p>This is where most authors get tripped up. The disclosure rules are different at each platform.</p>
+<h3>Amazon KDP</h3>
+<ul>
+<li><strong>You must disclose</strong> AI-generated content, including cover images and interior artwork. There is a checkbox in the KDP publishing workflow when you set up or edit a title.</li>
+<li>AI-<em>generated</em> must be disclosed. AI-<em>assisted</em> (edits, touch-ups, prompts used as part of a human-designed cover) does <strong>not</strong> require disclosure.</li>
+<li>KDP says the disclosure is <strong>confidential</strong>, does <strong>not</strong> go public, and does <strong>not</strong> negatively affect approval.</li>
+<li>KDP will not reject a book for being AI-generated, but <strong>failure to disclose</strong> can get a book removed.</li>
+</ul>
+<h3>IngramSpark</h3>
+<ul>
+<li>IngramSpark&#39;s Catalog Integrity Guidelines list as prohibited content &quot;created using automated means, including but not limited to content generated using artificial intelligence.&quot;</li>
+<li>In practice, IngramSpark treats this as a single binary: a book is either AI-generated or it is not. <strong>There is no &quot;AI cover only&quot; option.</strong> If your cover is AI, you must declare the whole book partially AI-generated.</li>
+<li>This is the strictest of the major distributors. If you use IngramSpark for paperback distribution, weigh this seriously.</li>
+</ul>
+<h3>Draft2Digital</h3>
+<ul>
+<li>Will not accept content &quot;generated entirely by AI/LLMs that has not gone through extensive editing from a human.&quot;</li>
+<li>Their language focuses on the manuscript more than the cover, but human involvement is expected.</li>
+</ul>
+<h3>Apple Books, Kobo, Barnes &amp; Noble</h3>
+<ul>
+<li>Less explicit policies as of May 2026. Standard practice: disclose AI generation where the platform asks; assume the KDP-style rule applies.</li>
+</ul>
+<hr>
+<h2>The Copyright Problem (Read This Twice)</h2>
+<p>This is the single most important section.</p>
+<p>In <strong>Thaler v. Perlmutter</strong>, the DC Circuit ruled in 2025 that purely AI-generated works do not meet the human-authorship requirement for US copyright. <strong>On March 2, 2026, the Supreme Court declined to review the case.</strong> That makes the rule settled law for now.</p>
+<p><strong>What this means for your covers:</strong></p>
+<ul>
+<li>A cover generated purely from a prompt <strong>cannot be registered</strong> with the US Copyright Office.</li>
+<li>That does not mean you can&#39;t <em>use</em> the cover. You can. The platform license is real.</li>
+<li>It does mean <strong>anyone else can also use a similar image without you being able to stop them.</strong></li>
+</ul>
+<p><strong>How to get copyright protection on an AI cover:</strong>
+The Copyright Office has stated that copyright can attach to AI-involved works <strong>where a human makes creative, expressive choices</strong> — selecting, editing, arranging, modifying, or combining AI-generated elements in a way that reflects creative judgment.</p>
+<p><strong>Practical translation for indie authors:</strong></p>
+<ul>
+<li>Generate the base image in AI.</li>
+<li>Bring it into Photoshop / Affinity / Canva.</li>
+<li>Do real human design work — composite multiple images, hand-paint adjustments, add custom typography, color-grade, retouch, layer.</li>
+<li>Document what you did (a &quot;Creative Audit Trail&quot;).</li>
+<li>The <em>combined</em> cover — image + your human design work — has a much stronger copyright claim than the raw AI output alone.</li>
+</ul>
+<blockquote>
+<p><strong>The cleanest path:</strong> Treat AI output as a stock image you have license to use. Then design the cover around it the way a human cover designer would. The design work is yours, and that is what gets copyright.</p>
+</blockquote>
+<hr>
+<h2>The Likeness / Third-Party IP Problem</h2>
+<p>The platform license <strong>does not</strong> shield you from these.</p>
+<p><strong>Real people (celebrities, models, anyone identifiable):</strong>
+Right of publicity is a legal right every person has — not just celebrities. Using AI to generate a cover that looks like a real person, without permission, is the same legal risk as photographing them and slapping their face on your book. <strong>Don&#39;t do it.</strong> Especially do not prompt for the names of actors, athletes, public figures, or BookTok-famous cover models.</p>
+<p><strong>Copyrighted characters:</strong>
+No Marvel, Disney, Pixar, anime franchises, video game characters, or recognizable trademarked imagery. The Disney/Universal v. Midjourney lawsuit is still in court, but the lesson for authors is already clear: even if Midjourney loses, <strong>you</strong> are still liable for what you publish.</p>
+<p><strong>Living artists&#39; styles:</strong>
+Several tools (DALL-E most explicitly) prohibit prompts that name living artists. Even where the tool permits it, &quot;in the style of [Living Artist Name]&quot; is a fast path to trouble. Period-of-art styles (&quot;art nouveau,&quot; &quot;1920s pulp,&quot; &quot;PreRaphaelite&quot;) are safer because they describe an era, not a person.</p>
+<hr>
+<h2>The CPH Decision Matrix (Practical Use)</h2>
+<p>For making a real decision on a CPH/TIP cover, run through these in order:</p>
+<ol>
+<li><p><strong>Where is this going to be sold?</strong>
+If KDP only: most tools are fine, just disclose.
+If IngramSpark: be aware your book is flagged partially-AI overall.</p>
+</li>
+<li><p><strong>Do you need legal cover (pun intended)?</strong>
+If yes — high-profile project, traditional review, or you want the lowest risk: <strong>Adobe Firefly</strong> on Creative Cloud. Indemnification is the only meaningful protection.</p>
+</li>
+<li><p><strong>What aesthetic do you need?</strong></p>
+<ul>
+<li>Romance / fantasy / lush atmospheric: Midjourney, Grok, Ideogram, or fine-tuned SDXL.</li>
+<li>Clean composition / faces / photorealistic: Gemini Imagen, DALL-E.</li>
+<li>Title text rendered on the image: Ideogram (still the leader).</li>
+<li>Character consistency across a series: Leonardo with model presets.</li>
+<li>Inside an existing design workflow: Canva AI or Adobe Firefly.</li>
+</ul>
+</li>
+<li><p><strong>Will the cover be copyrighted?</strong>
+If you want a registrable copyright: AI output is your <em>starting point</em>, not your finish line. Plan to do meaningful human design work after generation, and keep records of what you did.</p>
+</li>
+<li><p><strong>Will it look like anyone real?</strong>
+If yes, change it before you publish. No exceptions.</p>
+</li>
+<li><p><strong>KDP disclosure box:</strong>
+Click it. Failure to disclose is what gets books pulled, not the disclosure itself.</p>
+</li>
+</ol>
+<hr>
+<h2>Quick Reference Table</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Commercial use</th>
+<th>IP indemnification</th>
+<th>Best for</th>
+<th>Biggest watch-out</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ideogram</td>
+<td>All tiers, free OK</td>
+<td>No</td>
+<td>Text on image</td>
+<td>Third-party IP is your problem</td>
+</tr>
+<tr>
+<td>Grok / Aurora</td>
+<td>All tiers, free OK</td>
+<td>No</td>
+<td>Permissive content filter</td>
+<td>xAI trains on your prompts</td>
+</tr>
+<tr>
+<td>Gemini / Imagen</td>
+<td>All tiers, free OK</td>
+<td>No</td>
+<td>Realism, composition</td>
+<td>Same copyright limits</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>Paid only</td>
+<td>No</td>
+<td>Atmospheric romance/fantasy</td>
+<td>Active Disney lawsuit; $1M rule</td>
+</tr>
+<tr>
+<td>DALL-E (ChatGPT)</td>
+<td>Paid (Plus+)</td>
+<td>No</td>
+<td>Stylized illustration</td>
+<td>No real people / living artist styles</td>
+</tr>
+<tr>
+<td>Leonardo AI</td>
+<td>Paid only</td>
+<td>No</td>
+<td>Character consistency</td>
+<td>Free tier = no commercial use</td>
+</tr>
+<tr>
+<td>SDXL (Stable Diffusion)</td>
+<td>All uses, no caps</td>
+<td>No</td>
+<td>Free, ecosystem</td>
+<td>Check fine-tuned model licenses</td>
+</tr>
+<tr>
+<td>Canva AI (Magic Media)</td>
+<td>Pro/Teams</td>
+<td>No</td>
+<td>Finish-cover-in-tool</td>
+<td>No exclusivity to output</td>
+</tr>
+<tr>
+<td><strong>Adobe Firefly</strong></td>
+<td><strong>All paid CC plans</strong></td>
+<td><strong>Yes (paid plans)</strong></td>
+<td><strong>Lowest legal risk</strong></td>
+<td><strong>Aesthetics weaker than Midjourney</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Open Questions / Things to Watch (May 2026)</h2>
+<p>These are not settled yet. Worth tracking:</p>
+<ul>
+<li><strong>Disney/Universal v. Midjourney</strong> — first major studio test of AI training data. Outcome could reshape what these tools are even allowed to generate.</li>
+<li><strong>State-level publicity laws.</strong> Tennessee&#39;s ELVIS Act and similar laws in CA and IL are expanding right-of-publicity to cover AI-generated likenesses specifically.</li>
+<li><strong>EU AI Act.</strong> Disclosure requirements in the EU are stricter than US. If you sell in Europe, this matters.</li>
+<li><strong>KDP enforcement.</strong> As of 2025–2026, Amazon has stepped up enforcement of the disclosure rule. Disclose, don&#39;t gamble.</li>
+</ul>
+<hr>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200672390">Amazon KDP Content Guidelines</a></li>
+<li><a href="https://www.inkfluenceai.com/blog/amazon-kdp-ai-disclosure-policy-2026">Amazon KDP AI Disclosure Policy 2026 — Inkfluence AI</a></li>
+<li><a href="https://authorsguild.org/news/amazons-new-disclosure-policy-for-ai-generated-book-content-is-a-welcome-first-step/">Authors Guild on KDP AI Disclosure</a></li>
+<li><a href="https://ideogram.ai/legal/tos">Ideogram Terms of Service</a></li>
+<li><a href="https://ideogram.ai/legal/usage-policy">Ideogram Usage Policy</a></li>
+<li><a href="https://www.licenseorg.com/blog/grok-xai-image-generation-commercial-use-policy">Grok / xAI Image Generation Commercial Use — LicenseOrg</a></li>
+<li><a href="https://x.ai/news/grok-image-generation-release">xAI Grok Image Generation Release</a></li>
+<li><a href="https://terms.law/ai-output-rights/gemini/">Google Gemini Commercial Rights — Terms.Law</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service">Midjourney Terms of Service</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/27870375276557-Using-Images-Videos-Commercially">Midjourney — Using Images &amp; Videos Commercially</a></li>
+<li><a href="https://openai.com/policies/row-terms-of-use/">OpenAI Terms of Use</a></li>
+<li><a href="https://terms.law/ai-output-rights/dall-e/">DALL-E Commercial Rights — Terms.Law</a></li>
+<li><a href="https://leonardo.ai/terms-of-service">Leonardo AI Terms of Service</a></li>
+<li><a href="https://intercom.help/leonardo-ai/en/articles/8044018-commercial-usage">Leonardo AI Commercial Usage Help</a></li>
+<li><a href="https://stability.ai/license">Stability AI License</a></li>
+<li><a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/LICENSE.md">SDXL License on Hugging Face</a></li>
+<li><a href="https://www.canva.com/policies/content-license-agreement/">Canva Content License Agreement</a></li>
+<li><a href="https://www.canva.com/policies/ai-product-terms/">Canva AI Product Terms</a></li>
+<li><a href="https://www.adobe.com/content/dam/dx/us/en/products/sensei/sensei-genai/firefly-enterprise/Firefly_Legal_FAQs_Enterprise_Customers.pdf">Adobe Firefly Legal FAQs</a></li>
+<li><a href="https://www.licenseorg.com/blog/adobe-firefly-indemnification-explained">Adobe Firefly Indemnification — LicenseOrg</a></li>
+<li><a href="https://www.copyright.gov/ai/">US Copyright Office on AI</a></li>
+<li><a href="https://www.mayerbrown.com/en/insights/publications/2026/03/supreme-court-denies-review-in-ai-authorship-case">Supreme Court Denies Cert in Thaler — Mayer Brown</a></li>
+<li><a href="https://www.ingramspark.com/blog/ingramsparks-catalog-integrity-announcement">IngramSpark Catalog Integrity Guidelines</a></li>
+<li><a href="https://draft2digital.com/faq/">Draft2Digital FAQ</a></li>
+<li><a href="https://www.law.georgetown.edu/tech-institute/research-insights/insights/disney-nbc-universal-and-dreamworks-file-major-ip-lawsuit-against-ai-image-generator-midjourney/">Disney &amp; Universal v. Midjourney — Georgetown Tech Institute</a></li>
+</ul>
+<hr>
+<p><em>Compiled for Jessica Waldron / Clark Publishing House / The Invisible Pen — May 12, 2026. Verify any specific platform TOS before relying on this guide for a high-stakes publishing decision. This is research, not legal advice.</em></p>
+
+  </div>
+</article>
+
+<footer class="article-footer">
+  <div class="footer-flourish">·  ·  ·</div>
+  <p><a href="index.html">Cover Prompt Library</a> &nbsp;·&nbsp; <a href="https://theinvisiblepen.substack.com">The Invisible Pen on Substack</a></p>
+  <p>Clark Publishing House LLC · The Invisible Pen</p>
+  <div class="footer-meta">Updated May 2026 · Research and practitioner experience, not legal advice.</div>
+</footer>
+
+</body>
+</html>

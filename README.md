@@ -12,11 +12,11 @@ From Jessica Waldron — Clark Publishing House / The Invisible Pen.
 
 | Resource | What it is |
 |---|---|
-| [`ai-cover-rules-2026.md`](ai-cover-rules-2026.md) | Full legal and platform-rules guide. Each major AI image tool, KDP/IngramSpark disclosure rules, US Copyright Office position, right-of-publicity concerns. |
-| [`your-ai-cover-is-legal.md`](your-ai-cover-is-legal.md) | Substack article on the hybrid-work copyright path and the KDP disclosure rule indie authors miss. |
-| [`genre-prompts-follow-up.md`](genre-prompts-follow-up.md) | Free sample article — one strong cover prompt for each of twelve major fiction genres. |
-| [`graphic-prompts.md`](graphic-prompts.md) | Fourteen ready-to-paste image prompts for Gemini, Grok, and Ideogram — Substack hero images, pull-quote cards, library promo graphics. |
-| [`community-post.md`](community-post.md) | Short Q&A post: yes, you can generate the image in AI and finish in Book Brush — here's the catch. |
+| [`ai-cover-rules-2026.html`](ai-cover-rules-2026.html) | Full legal and platform-rules guide. Each major AI image tool, KDP/IngramSpark disclosure rules, US Copyright Office position, right-of-publicity concerns. |
+| [`your-ai-cover-is-legal.html`](your-ai-cover-is-legal.html) | Substack article on the hybrid-work copyright path and the KDP disclosure rule indie authors miss. |
+| [`genre-prompts-follow-up.html`](genre-prompts-follow-up.html) | Free sample article — one strong cover prompt for each of twelve major fiction genres. |
+| [`graphic-prompts.html`](graphic-prompts.html) | Fourteen ready-to-paste image prompts for Gemini, Grok, and Ideogram — Substack hero images, pull-quote cards, library promo graphics. |
+| [`community-post.html`](community-post.html) | Short Q&A post: yes, you can generate the image in AI and finish in Book Brush — here's the catch. |
 | [`index.html`](index.html) | Landing page for the GitHub Pages site. |
 
 ---
