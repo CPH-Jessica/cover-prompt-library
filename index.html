@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover Prompt Library — The Invisible Pen</title>
+<meta name="description" content="AI cover prompts and resources for indie authors. Free guides, prompt libraries, and the legal framework behind AI book covers — from Jessica Waldron / The Invisible Pen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum-deep: #4A235A;
+    --plum-mid: #6C3483;
+    --plum-light: #884EA0;
+    --plum-pale: #E8DAEF;
+    --plum-whisper: #F5EEF8;
+    --gold: #B8860B;
+    --gold-light: #D4A949;
+    --cream: #FAF6F0;
+    --cream-warm: #F5EFE6;
+    --rose-dusty: #C49AAA;
+    --rose-pale: #F4E1E5;
+    --text-dark: #2C1B33;
+    --text-soft: #5D4566;
+    --text-muted: #8B7A92;
+    --border-soft: #E5D6DA;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0; font-family: 'Lora', Georgia, serif; background: var(--cream); color: var(--text-dark); line-height: 1.7; font-size: 17px; }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum-mid) 50%, var(--plum-light) 100%); color: var(--cream); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 30%, rgba(212, 169, 73, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(196, 154, 170, 0.12) 0%, transparent 50%); pointer-events: none; }
+  .hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+  .hero-flourish { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold-light); margin-bottom: 1rem; letter-spacing: 0.5em; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 500; line-height: 1.05; margin: 0 0 1.25rem; letter-spacing: -0.01em; }
+  .hero h1 em { color: var(--gold-light); font-style: italic; font-weight: 400; }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--rose-pale); margin: 0 auto 2rem; max-width: 580px; }
+  .hero-meta { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.8rem; color: var(--gold-light); padding-top: 1.5rem; border-top: 1px solid rgba(212, 169, 73, 0.3); display: inline-block; }
+
+  /* SECTIONS */
+  .section { padding: 4rem 0; }
+  .section-alt { background: var(--plum-whisper); }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-eyebrow { font-family: 'Cormorant Garamond', serif; text-transform: uppercase; letter-spacing: 0.4em; color: var(--gold); font-size: 0.8rem; margin-bottom: 0.75rem; }
+  .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--plum-deep); font-weight: 500; margin: 0; }
+  .section-divider { width: 60px; height: 1px; background: var(--gold); margin: 1.5rem auto; position: relative; }
+  .section-divider::before, .section-divider::after { content: ''; position: absolute; top: 50%; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; transform: translateY(-50%); }
+  .section-divider::before { left: -10px; }
+  .section-divider::after { right: -10px; }
+  .section-intro { max-width: 620px; margin: 0 auto; color: var(--text-soft); text-align: center; font-size: 1.05rem; }
+
+  /* RESOURCE CARDS */
+  .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .resource-card { background: white; padding: 2rem 1.75rem; border-radius: 4px; border: 1px solid var(--border-soft); box-shadow: 0 2px 8px rgba(74, 35, 90, 0.04); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74, 35, 90, 0.08); }
+  .resource-card .card-eyebrow { font-family: 'Cormorant Garamond', serif; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); font-size: 0.7rem; margin-bottom: 0.75rem; }
+  .resource-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; color: var(--plum-deep); margin: 0 0 0.75rem; font-weight: 600; line-height: 1.2; }
+  .resource-card p { color: var(--text-soft); font-size: 0.98rem; margin: 0 0 1.5rem; flex: 1; }
+  .resource-card .card-link { font-family: 'Cormorant Garamond', serif; color: var(--plum-deep); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 2px; align-self: flex-start; font-size: 1.05rem; }
+  .resource-card .card-link:hover { color: var(--plum-light); border-bottom-color: var(--plum-light); }
+
+  /* PAID TIER CALLOUT */
+  .paid-callout { background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum-mid) 100%); color: var(--cream); padding: 3.5rem 3rem; border-radius: 6px; text-align: center; position: relative; overflow: hidden; }
+  .paid-callout::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 50% 0%, rgba(212, 169, 73, 0.2) 0%, transparent 50%); }
+  .paid-callout-inner { position: relative; z-index: 1; }
+  .paid-callout .lock-symbol { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold-light); margin-bottom: 1rem; }
+  .paid-callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.25rem; margin: 0 0 1rem; color: var(--cream); font-weight: 500; }
+  .paid-callout p { color: var(--rose-pale); margin: 0 auto 2rem; max-width: 560px; font-size: 1.05rem; }
+  .paid-callout .cta-button { display: inline-block; background: var(--gold-light); color: var(--plum-deep); padding: 0.85rem 2rem; font-family: 'Cormorant Garamond', serif; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; font-size: 0.9rem; text-decoration: none; border-radius: 3px; transition: transform 0.2s, background 0.2s; }
+  .paid-callout .cta-button:hover { background: var(--cream); transform: translateY(-1px); }
+  .paid-callout .price-note { margin-top: 1.5rem; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--rose-dusty); font-size: 0.95rem; }
+
+  /* ABOUT */
+  .about p { color: var(--text-soft); font-size: 1.05rem; margin-bottom: 1.25rem; }
+  .about .signature { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--plum-deep); margin-top: 2rem; text-align: center; }
+
+  /* FOOTER */
+  footer { background: var(--plum-deep); color: var(--rose-pale); padding: 3rem 2rem; text-align: center; }
+  footer .footer-flourish { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.5em; margin-bottom: 1rem; }
+  footer p { margin: 0.5rem 0; font-size: 0.95rem; }
+  footer a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  footer a:hover { border-bottom-color: var(--gold-light); }
+  footer .footer-meta { margin-top: 2rem; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; color: var(--rose-dusty); }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .hero { padding: 3.5rem 1.5rem 3rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.15rem; }
+    .section { padding: 3rem 0; }
+    .section-header h2 { font-size: 2rem; }
+    .paid-callout { padding: 2.5rem 1.5rem; }
+    .paid-callout h3 { font-size: 1.75rem; }
+    .container { padding: 0 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-flourish">⁂ ⁂ ⁂</div>
+    <h1>The Cover Prompt <em>Library</em></h1>
+    <p class="hero-subtitle">AI cover prompts, working guides, and the legal framework behind AI book covers — for indie authors who want to publish with confidence.</p>
+    <div class="hero-meta">From Jessica Waldron · The Invisible Pen · May 2026</div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Free Resources</div>
+      <h2>Start Here</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">Everything an indie author needs to know about AI cover art in 2026 — the legal rules, the workflow that actually works, and a free sample of cover prompts across major genres.</p>
+    </div>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="card-eyebrow">Reference Guide</div>
+        <h3>AI Book Cover Rules 2026</h3>
+        <p>The full legal and platform-rules breakdown — what each AI tool allows commercially, what the US Copyright Office has confirmed, and the KDP disclosure rules indie authors keep getting wrong.</p>
+        <a class="card-link" href="articles/ai-cover-rules-2026.md">Read the guide →</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="card-eyebrow">Substack Article</div>
+        <h3>Your AI Cover Is Legal. Your Disclosure Probably Isn't.</h3>
+        <p>The hybrid-work copyright path the Copyright Office confirmed in 2025, the KDP disclosure rule everyone misses, and what to actually do.</p>
+        <a class="card-link" href="articles/your-ai-cover-is-legal.md">Read the article →</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="card-eyebrow">Substack Article</div>
+        <h3>Cover Prompts by Genre — Free Sample</h3>
+        <p>One strong cover prompt for each of twelve major fiction genres, plus the three principles that make any cover prompt actually work.</p>
+        <a class="card-link" href="articles/genre-prompts-follow-up.md">Read the sample →</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="card-eyebrow">Prompt Library</div>
+        <h3>Graphic Prompts for Substack &amp; Social</h3>
+        <p>Fourteen ready-to-paste image prompts for Gemini, Grok, and Ideogram — Substack hero images, pull-quote cards, workflow diagrams, and library promo graphics.</p>
+        <a class="card-link" href="prompts/graphic-prompts.md">View the prompts →</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="card-eyebrow">Community Post</div>
+        <h3>The Book Brush + Canva Workflow</h3>
+        <p>Short post answering the question every author has been asking: yes, you can generate the image in AI and finish in Book Brush. Here's the catch.</p>
+        <a class="card-link" href="community-post.md">Read the post →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAID TIER -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="paid-callout">
+      <div class="paid-callout-inner">
+        <div class="lock-symbol">⁂</div>
+        <h3>The Expanded Library</h3>
+        <p>Forty-five-plus cover prompts across fifteen major genres with three to four mood variations each. The full Cover Prompt Anatomy breakdown. The negative-prompt cheat sheet. Series-consistency tricks. Quarterly updates. The whole thing.</p>
+        <a class="cta-button" href="https://theinvisiblepen.substack.com">Become a Paid Subscriber →</a>
+        <p class="price-note">$9.99/month · $99.99/year · Library plus every paid resource going forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about">
+  <div class="container" style="max-width: 700px;">
+    <div class="section-header">
+      <div class="section-eyebrow">Who Built This</div>
+      <h2>About</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <p>I'm Jessica Waldron. I run Clark Publishing House and The Invisible Pen, write across eleven fiction pen names, and teach authors over 40 how to actually use AI tools without getting taken to the cleaners legally or creatively.</p>
+
+    <p>This resource hub is where I park the free version of the work — the legal frameworks, the workflow guides, the cover prompt samples. The full paid library lives on Substack, where I update it quarterly and answer paid subscriber questions directly.</p>
+
+    <p>If you're an author trying to figure this out, you're in the right place. The whole point of building this in public is so you don't have to guess.</p>
+
+    <div class="signature">— Jess</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-flourish">·  ·  ·</div>
+  <p><a href="https://theinvisiblepen.substack.com">Substack</a> &nbsp;·&nbsp; <a href="https://www.skool.com">Skool Community</a> &nbsp;·&nbsp; <a href="https://github.com">GitHub</a></p>
+  <p>Clark Publishing House LLC · The Invisible Pen</p>
+  <div class="footer-meta">Updated May 2026 · This is research and practitioner experience, not legal advice.</div>
+</footer>
+
+</body>
+</html>
