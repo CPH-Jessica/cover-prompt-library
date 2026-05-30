@@ -3,7 +3,7 @@
 **A free resource hub for indie authors using AI for book covers.**
 From Jessica Waldron — Clark Publishing House / The Invisible Pen.
 
-🌐 **Live site:** [clarkpublishinghouse.github.io/cover-prompt-library](https://clarkpublishinghouse.github.io/cover-prompt-library) *(once Pages is enabled)*
+🌐 **Live site:** [cph-jessica.github.io/cover-prompt-library](https://cph-jessica.github.io/cover-prompt-library)
 📬 **Full paid library + ongoing updates:** [The Invisible Pen on Substack](https://theinvisiblepen.substack.com)
 
 ---
